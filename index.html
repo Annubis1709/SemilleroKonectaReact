@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>¡Mundo Smoothies!</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+        <link rel="stylesheet" href="css/styles.css">
+        
+    </head>
+    <body>
+        <header class="jumbotron">
+            <div class="container">
+                <div class="row row-header">
+                    <div class="col-12 col-sm-6">
+                        <h1>¡Mundo Smoothies!</h1>
+                        <p>Nos inspiramos en los mejores Smoothies del mundo haciendo un recorrido colorido y vibrante 
+                            por las infinitas posibilidades que nos ofrecen y creamos una experiencia de fusión única.
+                            ¡Nuestras creaciones estimularán tus sentidos!</p>
+                    </div>  
+
+                    <div class="col-12 col-sm align-self-center">
+                        <img src="img/logo.png" class="img-fluid">
+                    </div>              
+                    
+                    <div class="col-12 col-sm align-self-center">
+                        <a class="btn btn-warning btn-sm btn-block" role="button" id="reserve_Button"> 
+                            <strong>Reservaciones</strong>
+                        </a>                     
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top"> 
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="60"">
+                </a>
+
+                <div class="collapse navbar-collapse" id="Navbar">            
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> Quíenes Somos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./questions.html"><span class="fa fa-question-circle fa-lg"></span> Preguntas Frecuentes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contáctenos</a></li>
+                    </ul>
+
+                    <span class="navbar-text">
+                        <a id="login_Button" role="button">
+                            <span class="fa fa-sign-in"></span> Ingresar
+                        </a>                
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog madal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Ingreso</h4>
+                       <button type="button" class="close" data-dismiss="modal">
+                           &times;
+                       </button> 
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Correo Electrónico</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Correo Electrónico">
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
+                                    <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Contraseña">
+                                </div>
+                                <div class="col-sm-auto">
+
+                                    <div class="form-check">
+                                       <input class="form-check-input" type="checkbox">
+                                       <label class="form-check-label"> Recordarme</label>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Ingresar</button>
+                            </div>
+                        </form>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reserve_table_Modal" class="modal fade" role="dialog">
+            <div class="modal-dialog madal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reservar</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <form>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-12 col-sm-2 col-form-label">Número de Invitados</label>
+                                    <div class="col-12 col-sm">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                                value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                                value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                                value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                                                value="option4">
+                                            <label class="form-check-label" for="inlineRadio4">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
+                                                value="option5">
+                                            <label class="form-check-label" for="inlineRadio5">5</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6"
+                                                value="option6">
+                                            <label class="form-check-label" for="inlineRadio6">6</label>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="form-group row align-items-center">
+                                    <label class="col-12 col-sm-2 col-form-label">Sala</label>
+                                    <div class="col-12 col-sm">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active">
+                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> No Fumadores
+                                            </label>
+                                            <label class="btn btn-danger">
+                                                <input type="radio" name="options" id="option2" autocomplete="off"> Fumadores
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="form-group row align-items-center">
+                                    <label class="col-12 col-sm-2 col-form-label">Fecha y Hora</label>
+                                    <div class="col-12 col-sm-5">
+                                        <div class="input-group">
+                                            <input type="date" class="form-control" id="firstname" name="date" placeholder="Date">
+                                            <span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-5">
+                                        <div class="input-group">
+                                            <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                                            <span class="glyphicon glyphicon-time form-control-feedback" aria-hidden="true" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="offset-sm-2 col-md-10">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Reservar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="alert alert-dismissable alert-warning">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Atención:</strong> Por favor <a href="tel:+57 1234 5678">Llámenos</a> para realizar reservaciones mayores de seis invitados
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="container">
+            <section class="row row-content">
+                <div class="col">
+
+                    <div id="mycarousel" class="carousel slide"data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="img/Smoothiefrutos-rojos.jpg" width="120" height="100" alt="Smoothie Frutos Rojos"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Smoothie de Arándonos y Frutos Rojos <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-success">$8.000</span></h2>
+                                    <p class="d-none d-sm-block">Los arándanos suelen gustar más por su sabor dulce, su curioso color azulado y su textura jugosa, sin pepitas y una piel muy fina. 
+                                        Resultan perfectos en batidos bien cremosos. Con mezcla de frutos rojos añadimos más color y un toque más ácido y fresco, jugando con la proporción de frambuesas, 
+                                        grosellas y moras. Simplemente trituradas con leche y yogur ya nos ofrecen un batido delicioso.</p>
+                                </div>                           
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="img/kiwi.jpg" width="120" height="100" alt="Smoothie kiwi">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Promoción del mes <span class="badge badge-danger">NUEVO</span> <span class="badge badge-pill badge-success">$7.000</span></h2>
+                                    <p class="d-none d-sm-block">Nos gusta destacar su color verde intenso en recetas que combinen ingredientes del mismo color, 
+                                        por eso es una fruta idónea para smoothies y smoothie bowls con hortalizas y verduras.</p>
+                                </div>                       
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="img/smoothie-bowl-chocolate.jpg" width="120" height="100" alt="Smoothie bowl de chocolate"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Promoción del mes <span class="badge badge-danger">NUEVO</span> <span class="badge badge-pill badge-success">$7.000</span></h2>
+                                    <p class="d-none d-sm-block">Marravillosa y fantástica receta muy nutritiva y balanceada, con alto contenido de fibras y proteínas.
+                                        Ideal para empezar el día cargado de energias o después de un entrenamiento intenso para una recuperación saludable.
+                                    </p>
+                                </div>                           
+                            </div>
+
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="img/mango-fresa.jpg" width="120" height="100" alt="Smoothie Mango/Fresa"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Smoothie de Mango y Fresa <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-success">$6.000</span></h2>
+                                    <p class="d-none d-sm-block">Delicioso y saludable smoothie de frutas tropicales, perfecto para compartir con amigos y familiares en días soleados y/o calurosos
+                                        o para empezar el día con energía.</p>
+                                        <p>Entre sus ingredientes están: mango, fresas, banano, jengibre, yogurt y hojas de menta para adornar y dar fescura.</p>
+                                </div>                           
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="img/edier.jpeg" width="105" height="105" alt="edier">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2>Edier Sanchez</h2>
+                                    <h4>Experto en Smoothies</h4>
+                                    <p class="d-none d-sm-block">Reconocido mundialmente por su única y asombrosa combinación de sabores de smoothies. 
+                                        Se especializa en crear deliciosas experiencias de fusión.</p>
+                                </div>             
+                            </div>
+                        </div>
+    
+                        <ol class="carousel-indicators">
+                            <li data-target="my#carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="my#carousel" data-slide-to="1"></li>
+                            <li data-target="my#carousel" data-slide-to="2"></li>
+                            <li data-target="my#carousel" data-slide-to="3"></li>
+                            <li data-target="my#carousel" data-slide-to="4"></li>
+                        </ol>                        
+                        <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                        
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span class="fa fa-pause"></span>        
+                        </button>                    
+                    </div>
+                </div>
+            </section>
+
+            <section class="row row-content align-items-center">
+                <div class="col-12 col-sm-1 order-sm-last col-md-3">
+                    <h3>Nuestras creaciones únicas</h3>
+                </div>
+                <div class="row col-12 col-sm  col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/smoothiefrutosrojos2.jpg" width="300" height="400" alt="Smoothie Frutos Rojos">
+                        <div class="media-body">                        
+                            <h2 class="mt-0">Smoothie de Arándonos y Frutos Rojos <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-success">$8.000</span></h2>
+                            <p class="d-none d-sm-block">Los arándanos suelen gustar más por su sabor dulce, su curioso color azulado y su textura jugosa, sin pepitas y una piel muy fina. 
+                                Resultan perfectos en batidos bien cremosos. Con mezcla de frutos rojos añadimos más color y un toque más ácido y fresco, jugando con la proporción de frambuesas, 
+                                grosellas y moras. Simplemente trituradas con leche y yogur ya nos ofrecen un batido delicioso.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <h3>Promoción del mes</h3>
+                </div>
+                <div class="col col-sm col-md">
+                    <div class="media">                    
+                        <div class="media-body order-sm-first col-sm">
+                            <h2 class="mt-0 text-justify">Smoothie Kiwi <span class="badge badge-danger">NUEVO</span> <span class="badge badge-pill badge-success">$7.000</span></h2>
+                            <p class="d-none d-sm-block">Nos gusta destacar su color verde intenso en recetas que combinen ingredientes del mismo color, 
+                                por eso es una fruta idónea para smoothies y smoothie bowls con hortalizas y verduras.</p>
+                        </div> 
+                        <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/kiwi.jpg" width="300" height="400" alt="Smoothie kiwi">
+                    </div>             
+                </div>
+            </section>
+
+            <section class="row row-content align-items-center">
+                <div class="col-12 col-sm-4 col-md-3">
+                    <h3>Promoción del mes</h3>
+                </div>
+                <div class="col col-sm col-md">
+                    <div class="media">                    
+                        <div class="media-body order-sm-first col-sm">
+                            <h2 class="mt-0 text-justify">Smoothie Bowl de Chocolate<span class="badge badge-danger">NUEVO</span> <span class="badge badge-pill badge-success">$7.000</span></h2>
+                            <p class="d-none d-sm-block">Marravillosa y fantástica receta muy nutritiva y balanceada, con alto contenido de fibras y proteínas.
+                                Ideal para empezar el día cargado de energias o después de un entrenamiento intenso para una recuperación saludable.
+                            </p>
+                        </div> 
+                        <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/smoothie-bowl-chocolate.jpg" width="300" height="400" alt="Smoothie bowl de chocolate">
+                    </div>             
+                </div>
+            </section>
+
+            <section class="row row-content align-items-center">
+                <div class="col-12 col-sm-1 order-sm-last col-md-3">
+                    <h3>Nuestras creaciones únicas</h3>
+                </div>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/mango-fresa.jpg" width="300" height="400" alt="Smoothie Mango/Fresa">
+                        <div class="media-body">                        
+                            <h2 class="mt-0 text-justify">Smoothie de Mango y Fresa <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-success">$6.000</span></h2>
+                            <p class="d-none d-sm-block">Delicioso y saludable smoothie de frutas tropicales, perfecto para compartir con amigos y familiares en días soleados y/o calurosos
+                                o para empezar el día con energía.</p>
+                                <p>Entre sus ingredientes están: mango, fresas, banano, jengibre, yogurt y hojas de menta para adornar y dar fescura.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row row-content align-items-center">
+                <div class="col-12 col-sm-1 order-sm-last col-md-3">
+                    <h3>¡Conoce a nuesto creativo genio!</h3>
+                </div>
+                <div class="row col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/edier.jpeg"  width="300" height="400" alt="edier">
+                        <div class="media-body">
+                            <h2 class="mt-0">Edier Sanchez</h2>
+                            <h4>Experto en Smoothies</h4>
+                            <p class="d-none d-sm-block">Reconocido mundialmente por su única y asombrosa combinación de sabores en todo tipo de Smoothies y Milshake.
+                                Se especializa en crear deliciosas experiencias de fusión.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="row">             
+                    <div class="col-4 offset-1 col-sm-2"> 
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="./aboutus.html">Quíenes Somos</a></li>
+                            <li><a href="./questions.html">Preguntas Frecuentes</a></li>
+                            <li><a href="./contactus.html">Contáctenos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-7 col-sm-5">
+                        <h5>Dirección de Contacto</h5>
+                        <address>
+                          Carrera 45 #67 Sur - 49<br>
+                          Santa Ana<br>
+                          SABANETA<br>
+                          <i class="fa fa-phone fa-lg"></i> : +57 012 345 678<br>
+                          <i class="fa fa-fax fa-lg"></i> : +57 350 865 2623<br>
+                          <i class="fa fa-envelope fa-lg"></i> : <a href="mailto:mundosmoothies@food.net">mundosmoothies@food.net</a>
+                       </address>
+                    </div>
+                    <div class="col-12 col-sm-4 align-self-center">
+                        <div class="text-center">
+                            <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                            <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                            <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                        </div>
+                    </div>
+               </div>
+               <div class="row justify-content-center">             
+                    <div class="col-auto">
+                        <p>© Copyright 2021 ¡Mundo Smothies!</p>
+                    </div>
+               </div>
+            </div>
+        </footer>
+       
+        <!--script src="node_modules/popper.js/dist/umd/popper.min.js"></script-->
+         <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>    
+        <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+
+
+    </body>
+</html>
