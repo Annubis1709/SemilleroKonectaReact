@@ -1,0 +1,27 @@
+{
+  "name": "¡Mundo Smoothies!",
+  "version": "1.0.0",
+  "description": "Web ¡Mundo Smoothies!",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annubis1709/SemilleroKonectaReact.git"
+  },
+  "keywords": [
+    "Practica",
+    "HTML_CSS"
+  ],
+  "author": "Edier Sanchez Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Annubis1709/SemilleroKonectaReact/issues"
+  },
+  "homepage": "https://github.com/Annubis1709/SemilleroKonectaReact#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
