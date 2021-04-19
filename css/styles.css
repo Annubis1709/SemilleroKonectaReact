@@ -83,4 +83,12 @@ body {
 .modal-footer {
   background: #7B1FA2;
 }
+
+.is-required:after {
+  content: '* ';
+  margin-left: 3px;
+  color: red;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=styles.css.map */
