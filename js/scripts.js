@@ -1,3 +1,5 @@
+const { event } = require("grunt");
+
 $(document).ready(function () {
     $('#mycarousel').carousel({ interval: 2000 });
     $('#carouselButton').click(function () {
@@ -24,9 +26,24 @@ $(function () {
     });
 }); 
 
+// SELECT ELEMENTS
+
+const input_element = document.querySelector('.input');
+const output_operation_element = document.querySelector('.operation .value');
+const output_result_element = document.querySelector('.result .value');
+
+// SOME VARIABLES
+const OPERATORS = ["+", "-", "*", "/"];
+const POWER = "POWER(", FACTORIAL = "FACTORIAL";
+let data = {
+    operation : [],
+    formula : []
+}
+let ans = 0;
+
 // BOTONES DE LA CALCULADORA
 
-let botonesCalculadora = [
+let botonesCalculadora = [  
     {
         name : "rad",
         symbol : "Rad",
@@ -237,6 +254,55 @@ let botonesCalculadora = [
         type : "operator"
     }
 ];
+
+// GAMMA FUNCTINON
+function gamma(n) {  // accurate to about 15 decimal places
+    //some magic constants 
+    var g = 7, // g represents the precision desired, p is the values of p[i] to plug into Lanczos' formula
+        p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+    if(n < 0.5) {
+      return Math.PI / Math.sin(n * Math.PI) / gamma(1 - n);
+    }
+    else {
+      n--;
+      var x = p[0];
+      for(var i = 1; i < g + 2; i++) {
+        x += p[i] / (n + i);
+      }
+      var t = n + g + 0.5;
+      return Math.sqrt(2 * Math.PI) * Math.pow(t, (n + 0.5)) * Math.exp(-t) * x;
+    }
+}
+
+// CREAR BOTONES CALCULADORA
+
+function crearBotonesCalculadora() {
+    const botonesPorFila = 8;
+    let botonesAñadidos = 0;
+
+    botonesCalculadora.forEach( button => {
+
+        if (botonesAñadidos % botonesPorFila == 0) {
+            input_element.innerHTML += `<div class = "row"></div>`;                     
+        }
+        const row = document.querySelector(".row:last-child");
+        row.innerHTML += `<button id = "${button.name}">${button.symbol}</button>`;
+        botonesAñadidos++;
+    })
+}
+
+crearBotonesCalculadora();
+
+// CLICK EVENT LISTENER
+
+input_element.addEventListener("click", event => {
+    const target_btn = event.target;
+    botonesCalculadora.forEach( button => {
+        if (button.name == target_btn.id) calculator(button);            
+        
+    })
+})
+
 
 
 /*
