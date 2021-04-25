@@ -255,6 +255,174 @@ let botonesCalculadora = [
     }
 ];
 
+// CREAR BOTONES CALCULADORA
+
+function crearBotones() {
+    const botonesPorFila = 8;
+    let botonesAñadidos = 0;
+
+    botonesCalculadora.forEach( button => {
+
+        if (botonesAñadidos % botonesPorFila == 0) {
+            input_element.innerHTML += `<div class="row"></div>`;                     
+        }
+
+        const row = document.querySelector(".row:last-child");
+        row.innerHTML += `<button id="${button.name}">${button.symbol}</button>`;
+        botonesAñadidos++;
+    })
+}
+
+crearBotones();
+
+// RADIANES Y GRADOS
+
+let RADIANES = true;
+const rad_btn = document.getElementById("rad");
+const deg_btn = document.getElementById("deg");
+rad_btn.classList.add("active-angle");
+
+function angleToggler() {
+	rad_btn.classList.toggle("active-angle");
+	deg_btn.classList.toggle("active-angle");
+	
+}
+
+
+// CLICK EVENT LISTENER
+
+input_element.addEventListener("click", event => {
+    const target_btn = event.target;
+    botonesCalculadora.forEach( button => {
+        if (button.name == target_btn.id) calculator(button);            
+        
+    })
+})
+
+// CALCULATOR
+
+function calculator(button) {
+
+    if (button.type == "operator") {
+
+        data.operation.push(button.symbol);
+		data.formula.push(button.formula);
+        
+    } else if (button.type == number) {
+
+        data.operation.push(button.symbol);
+		data.formula.push(button.formula);
+
+    } else if (button.type == trigo_function) {
+
+        data.operation.push(button.symbol + "(");
+        data.formula.push(button.formula);
+        
+    } else if (button.type == math_function) {
+        let symbol, formula;
+
+        if (button.name == "factorial") {
+
+            symbol = "!";
+            formula = button.formula;
+            data.operation.push(symbol);
+            data.formula.push(formula);        
+
+        } else if (button.name == "power") {
+
+            symbol = "^(";
+            formula = button.formula;
+            data.operation.push(symbol);
+            data.formula.push(formula);        
+
+        } else if (button.name == "square") {
+
+            symbol = "^(";
+            formula = button.formula;
+            data.operation.push(symbol);
+            data.formula.push(formula); 
+
+            data.operation.push("2)");
+            data.formula.push("2)");        
+
+        } else {
+
+            symbol = button.symbol + "(";
+            formula = button.formula + "(";
+            data.operation.push(symbol);
+            data.formula.push(formula); 
+        }               
+        
+    } else if (button.type == key) {
+
+        if (button.name == "clear") {
+            data.operation = [];
+            data.formula = [];  
+
+            updateOutputResult(0);            
+            
+        } else if (button.name == "delete") {
+            data.operation.pop();
+            data.formula.pop();
+            
+        } else if (button.name == "rad") {
+
+            RADIANES = true;
+            angleToggler();       
+            
+        } else if (button.name == "deg") {
+
+            RADIANES = false;
+            angleToggler(); 
+
+        } else {
+            
+        }            
+                
+    } else if (button.type == calculate) {
+           
+        formula_str = data.formula.join('');
+        let POWER_SEARCH_RESULT = search(data.formula, POWER);
+        let FACTORIAL_SEARCH_RESULT = search(data.formula, FACTORIAL);
+        console.log(daç.formula, POWER_SEARCH_RESULT, FACTORIAL_SEARCH_RESULT);       
+        let result;
+        try {
+            result = eval(formula_str);
+        } catch (error) {
+            if (error instanceof SyntaxError) {
+                result = "¡Error de Sintaxis!"
+                updateOutputResult(result);
+                return;
+            }            
+        }
+
+        // GUARDAR LOS RESULTADOS PARA UTILIZARLOS DESPUES
+
+        ans = result;
+        data.operation = [result];
+        data.formula = [result];
+
+
+
+        updateOutputResult(result);        
+    } 
+    updateOutputOperation(data.operation.join(''));   
+        
+    }
+
+
+
+    // UPDATE OUTPUT
+
+    function updateOutputOperation(operation) {
+        output_operation_element.innerHTML = operation;
+    }
+    function updateOutputResult(result) {
+        output_result_element.innerHTML = result;
+    }
+
+
+
 // GAMMA FUNCTINON
 function gamma(n) {  // accurate to about 15 decimal places
     //some magic constants 
@@ -274,34 +442,55 @@ function gamma(n) {  // accurate to about 15 decimal places
     }
 }
 
-// CREAR BOTONES CALCULADORA
+// FUNCIONES TRIGONOMETRICAS
 
-function crearBotonesCalculadora() {
-    const botonesPorFila = 8;
-    let botonesAñadidos = 0;
+function trigo(callback, angle) {
 
-    botonesCalculadora.forEach( button => {
+	if (!RADIANES) {
+		angle = angle * (Math.PI)/180;
+	}
 
-        if (botonesAñadidos % botonesPorFila == 0) {
-            input_element.innerHTML += `<div class = "row"></div>`;                     
-        }
-        const row = document.querySelector(".row:last-child");
-        row.innerHTML += `<button id = "${button.name}">${button.symbol}</button>`;
-        botonesAñadidos++;
-    })
+	let result;
+
+	if (angle % (Math.PI/2) == 0) {
+		result = Math.round(callback(angle));
+
+	} else {
+
+		result = callback(angle);
+	}
+
+	return result;
 }
 
-crearBotonesCalculadora();
+function inv_trigo(callback, value) {
+	let angle = callback(value);
+	if (!RADIAN) {
+		angle = angle * 180/Math.PI;
+	}
+	return angle;
+}
 
-// CLICK EVENT LISTENER
+// FUNCION FACTORIAL
 
-input_element.addEventListener("click", event => {
-    const target_btn = event.target;
-    botonesCalculadora.forEach( button => {
-        if (button.name == target_btn.id) calculator(button);            
-        
-    })
-})
+function factorial(number) {
+
+    if (number % 1 != 0)
+    return  function gamma(number +1 );
+
+	if ( number === 0 || number === 1) 
+    return 1;
+	let result = 1;
+
+	for (let i = 1; i <= number;  i++ ) {
+
+		result *= i;
+
+		if (result === Infinity) 
+        return Infinity;
+	}
+	return result;
+}
 
 
 
