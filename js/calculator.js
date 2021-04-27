@@ -1,5 +1,7 @@
 
-    // SELECCIONA ELEMENTOS
+// CALCULADORA CIETÍFICA
+
+// SELECCIONA ELEMENTOS
 
     const input_element = document.querySelector('.input');
     const output_operation_element = document.querySelector('.operation .value');
@@ -80,7 +82,7 @@ let botonesCalculadora = [
         type : "trigo_function"
     },{
         name : "sin",
-        symbol : "sin",
+        symbol : "sen",
         formula : "trigo(Math.sin,",
         type : "trigo_function"
     },{
@@ -123,7 +125,7 @@ let botonesCalculadora = [
         type : "trigo_function"
     },{
         name : "asin",
-        symbol : "asin",
+        symbol : "asen",
         formula : "inv_trigo(Math.asin,",
         type : "trigo_function"
     },{

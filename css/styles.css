@@ -1,221 +1,161 @@
-
 .row-header {
   margin: 0px auto;
-  padding: 0px 0px;
-}
+  padding: 0px 0px; }
 
 .row-content {
   margin: 0px auto;
   padding: 50px 0px;
   border-bottom: 1px ridge;
-  min-height: 400px;
-}
+  min-height: 400px; }
 
 .footer {
   background-color: #F3E5F5;
   margin: 0px auto;
-  padding: 20px 0px;
-}
+  padding: 20px 0px; }
 
 .jumbotron {
   margin: 0px auto;
   padding: 70px 30px;
   background: #7B1FA2;
-  color: floralwhite;
-}
+  color: floralwhite; }
 
 address {
   font-size: 80%;
   margin: 0px;
-  color: #0f0f0f;
-}
+  color: #0f0f0f; }
 
 body {
   padding: 50px 0px 0px 0px;
-  z-index: 0;
-}
+  z-index: 0; }
 
 .navbar-dark {
-  background-color: #4A148C;
-}
+  background-color: #4A148C; }
 
 .tab-content {
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  padding: 10px;
-}
+  padding: 10px; }
 
 .carousel {
-  background: #4A148C;
-}
-
-.carousel .carousel-item {
-  height: 300px;
-}
-
-.carousel .carousel-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 300px;
-}
+  background: #4A148C; }
+  .carousel .carousel-item {
+    height: 300px; }
+    .carousel .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px; }
 
 #carouselButton {
   right: 0px;
   position: absolute;
   bottom: 0px;
-  z-index: 1;
-}
+  z-index: 1; }
 
 .modal-header {
   background: #4A148C;
-  color: floralwhite;
-}
-
-.modal-header button {
-  color: floralwhite;
-}
+  color: floralwhite; }
+  .modal-header button {
+    color: floralwhite; }
 
 .modal-body {
-  background: #F3E5F5;
-}
+  background: #F3E5F5; }
 
 .modal-footer {
-  background: #7B1FA2;
-}
+  background: #7B1FA2; }
 
 .is-required:after {
   content: '* ';
   margin-left: 3px;
   color: red;
-  font-weight: bold;
-}
-
+  font-weight: bold; }
 
 /* ESTILOS CALCULADORA */
-
-
-
-
-
-
-
-.calc-container{
+.calc-container {
   background-color: #1d1d1d;
-
   width: 600px;
   height: auto;
+  border-radius: 0 0 30px 30px; }
 
-  border-radius: 0 0 30px 30px;
-}
+.output {
+  width: 100%; }
 
-.output{
-  width: 100%;;
-}   
-
-.operation{
+.operation {
   width: 600px;
   height: 70px;
-
   color: #878787;
-
   font-size: 1.9em;
   font-weight: bold;
-
   position: relative;
-  overflow: hidden;
-}
-.operation .value{
+  overflow: hidden; }
+
+.operation .value {
   position: absolute;
-
   bottom: 5px;
-  right : 10px;
-  
+  right: 10px;
   white-space: nowrap;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-.result{
+.result {
   width: 600px;
   height: 140px;
-
   color: #FFF;
-
   font-size: 2.6em;
   font-weight: bold;
-  
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
 
-.result .value{
+.result .value {
   position: absolute;
-
   top: 50%;
   transform: translateY(-50%);
-  right : 10px;
-  
+  right: 10px;
   white-space: nowrap;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-
-.input{
+.input {
   background-color: #7B1FA2;
-
   border-radius: 0 0 25px 25px;
   border: 1px solid #1d1d1d;
-  height: 340px;
-}
+  height: 340px; }
 
 .row {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-}
+  align-items: center; }
 
-.row button{
+.row button {
   width: 50px;
   height: 50px;
-
   font-size: 1.5em;
-
   border: none;
   border-radius: 50%;
   background-color: transparent;
+  margin: 8px;
+  cursor: pointer; }
 
-  margin : 8px;
+.row button:hover {
+  font-weight: bold; }
 
-  cursor: pointer;
-}
-
-.row button:hover{
-  font-weight: bold;
-}
-
-.row #calculate{
+.row #calculate {
   color: #FFF;
   background-color: #46e0bc;
-  width : 121px;
-  border-radius: 50px;
-}
-.row #delete{
+  width: 121px;
+  border-radius: 50px; }
+
+.row #delete {
   color: #FFF;
-  background-color: #e05046;
-}
+  background-color: #e05046; }
 
 #division, #multiplication, #subtraction, #addition {
-  color: #18b893;
-}
+  color: #18b893; }
 
-.input button span{
+.input button span {
   font-size: 0.6em;
-  position: absolute;
-}
+  position: absolute; }
 
-.active-angle{
+.active-angle {
   background-color: #1d1d1d !important;
   color: #FFF !important;
-  border-radius: 10px !important;
-}
+  border-radius: 10px !important; }

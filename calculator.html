@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -8,33 +8,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
+     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+     <!-- endbuild -->
    
 </head>
 
 <body>
-    <header class="jumbotron">
-        <div class="container">
-            <div class="row row-header">
-                <div class="col-12 col-sm-6">
-                    <h1>¡Mundo Smoothies!</h1>
-                    <p>Nos inspiramos en los mejores Smoothies del mundo haciendo un recorrido colorido y vibrante 
-                        por las infinitas posibilidades que nos ofrecen y creamos una experiencia de fusión única.
-                        ¡Nuestras creaciones estimularán tus sentidos!</p>
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <img src="img/logo.png" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </header>
-    
+        
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -53,32 +39,33 @@
         </div>
     </nav>    
 
-    <main class="container">
-        <div class="row">
-            <ol class="col-12 breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Inicio</a></li>
-                <li class="breadcrumb-item active">Calculadora</li>
-            </ol>
-            <div class="col-12">
-               <h3>Calculadora Científica</h3>
-               <hr>
-            </div>
-        </div> 
-
-        <div class="row-content calculator">
-            <div class="calc-container">
-                <div class="output">
-                    <div class="operation">
-                        <div class="value"></div>
-                    </div>
-                    <div class="result">
-                        <div class="value">0</div>
-                    </div>
+    <main>
+       <div class="container">
+            <div class="row">
+                <ol class="col-12 breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html">Inicio</a></li>
+                    <li class="breadcrumb-item active">Calculadora</li>
+                </ol>
+                <div class="col-12">
+                <h3>Calculadora Científica</h3>
+                <hr>
                 </div>
-                <div class="input"></div>
+            </div> 
+
+            <div class="row-content calculator">
+                <div class="calc-container">
+                    <div class="output">
+                        <div class="operation">
+                            <div class="value"></div>
+                        </div>
+                        <div class="result">
+                            <div class="value">0</div>
+                        </div>
+                    </div>
+                    <div class="input"></div>
+                </div>
             </div>
-        </div>
-        
+        </div>        
     </main>
     
 
@@ -123,12 +110,14 @@
            </div>
         </div>
     </footer>
-    
+
+     <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/calculator.js"></script>
+     <!-- endbuild -->
    
 </body>
 
