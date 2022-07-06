@@ -74,7 +74,7 @@
     "font-awesome": "^4.7.0",
     "imagemin": "^6.1.0",
     "jquery": "^3.5.1",
-    "jquery-validation": "^1.19.3",
+    "jquery-validation": "^1.19.5",
     "popper.js": "^1.16.1",
     "uglify-js": "^2.4.24",
     "usemin": "^0.6.0"
